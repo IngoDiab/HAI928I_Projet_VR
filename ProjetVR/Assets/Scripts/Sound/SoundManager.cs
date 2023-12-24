@@ -6,7 +6,9 @@ using UnityEngine;
 public enum SOUND_NAME
 {
     DEFAULT,
-    SHOT_1911
+    OUT_OF_AMMO,
+    SHOT_1911,
+    RELOAD_1911
 };
 
 [Serializable]
