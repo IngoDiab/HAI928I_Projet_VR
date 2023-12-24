@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class GPE : MonoBehaviour
 {
-    public abstract void UseGPE(Player _playerAttached);
+    public abstract void UseGPE(Player _playerAttached, Hand _handAttached);
 
-    public abstract void ExitGPE();
+    public abstract void ExitGPE(Player _playerAttached, Hand _handAttached);
 }

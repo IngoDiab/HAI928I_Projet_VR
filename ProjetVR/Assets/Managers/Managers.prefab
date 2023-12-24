@@ -52,6 +52,8 @@ MonoBehaviour:
     sound: {fileID: 8300000, guid: da3c2212237e5fa46a130773ac5dc8fe, type: 3}
   - name: 1
     sound: {fileID: 8300000, guid: a7b7ff04f004d7740be532071b9564bc, type: 3}
+  - name: 3
+    sound: {fileID: 8300000, guid: 80e0311d1c21a444fa937bfa9395e846, type: 3}
 --- !u!114 &7562221875249265024
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,9 +69,22 @@ MonoBehaviour:
   allVFX:
   - name: 1
     vfx: {fileID: 1391847458487284, guid: 9bf79f2d846a57440a981c168c87c617, type: 3}
+    vfxs: []
     scale: {x: 1, y: 1, z: 1}
     autoDestroy: 1
     lifetime: 0.05
+  - name: 2
+    vfx: {fileID: 0}
+    vfxs:
+    - {fileID: 100000, guid: 3cddb9cce01bd5e4b909603b22269ee5, type: 3}
+    - {fileID: 100000, guid: 350d9aee5330d2247901da1a0557a4c2, type: 3}
+    - {fileID: 100000, guid: d9f28cf20af3a5346b4213274e54aa74, type: 3}
+    - {fileID: 100000, guid: 1c0dce8919b251d41842711db86342f0, type: 3}
+    - {fileID: 100000, guid: b1e375631a4a3fb42a8d2842d82a5dd3, type: 3}
+    - {fileID: 100000, guid: 2dc2d86236479b4428b2023663b4d411, type: 3}
+    scale: {x: 1, y: 1, z: 1}
+    autoDestroy: 0
+    lifetime: 0
 --- !u!114 &6095793141871614350
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -83,8 +98,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mContinousMoveProvider: {fileID: 0}
-  mSnapTurnProvider: {fileID: 0}
-  mContinousTurnProvider: {fileID: 0}
+  mContinousMoveAction: {fileID: 6972639530819350904, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  mSnapTurnAction: {fileID: -8525429354371678379, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  mContinousTurnAction: {fileID: -6493913391331992944, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   mPlayerUsingContinousTurn: 1
 --- !u!114 &3911674502821021644
 MonoBehaviour:

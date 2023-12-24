@@ -783,7 +783,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "PrimaryButton",
+                    "name": "Reload",
                     "type": "Button",
                     "id": "41afb171-0998-4bf6-858a-fd5603f8a8e2",
                     "expectedControlType": "Button",
@@ -961,11 +961,11 @@
                 {
                     "name": "",
                     "id": "68689d32-11f8-4518-9fd7-416acb898a24",
-                    "path": "<XRController>{LeftHand}/{PrimaryButton}",
+                    "path": "<XRController>{LeftHand}/{SecondaryButton}",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
-                    "action": "PrimaryButton",
+                    "action": "Reload",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -1042,6 +1042,15 @@
                     "name": "Snap Turn",
                     "type": "Value",
                     "id": "8c14e969-a054-4f12-840c-4e0bd85173d9",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "MoveOnRope",
+                    "type": "Value",
+                    "id": "0fdddf4a-3c56-4d37-9a62-d2cc2e6d8596",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -1134,6 +1143,17 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Snap Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "ce16fe33-64de-4bd0-bc62-24c4aac7779b",
+                    "path": "<XRController>{LeftHand}/{Primary2DAxis}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveOnRope",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -1599,7 +1619,7 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "PrimaryButton",
+                    "name": "Reload",
                     "type": "Button",
                     "id": "46606eae-d4bb-495c-a123-aa9177acb21c",
                     "expectedControlType": "Button",
@@ -1777,11 +1797,11 @@
                 {
                     "name": "",
                     "id": "521dab55-a0b6-4dfc-905a-cae90f4a032d",
-                    "path": "<XRController>{RightHand}/{PrimaryButton}",
+                    "path": "<XRController>{RightHand}/{SecondaryButton}",
                     "interactions": "",
                     "processors": "",
                     "groups": "Generic XR Controller",
-                    "action": "PrimaryButton",
+                    "action": "Reload",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
@@ -1858,6 +1878,15 @@
                     "name": "Snap Turn",
                     "type": "Value",
                     "id": "44441ad6-5762-466d-ad54-aa44fcd61a5c",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "MoveOnRope",
+                    "type": "Value",
+                    "id": "f00e4662-93be-41e4-b62b-61033044ead6",
                     "expectedControlType": "Vector2",
                     "processors": "",
                     "interactions": "",
@@ -1950,6 +1979,17 @@
                     "processors": "",
                     "groups": "Generic XR Controller",
                     "action": "Snap Turn",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "bda33d9f-9a9b-4afd-9375-b31f03f917c0",
+                    "path": "<XRController>{RightHand}/{Primary2DAxisClick}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "MoveOnRope",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

@@ -30,14 +30,15 @@ public class Hand : MonoBehaviour
     public Action<Weapon> OnWeaponLost = null;
 
     [SerializeField] HAND mHand = HAND.NONE;
+    [SerializeField] ActionBasedController mControllerHand = null;
     [SerializeField] bool mHasWeapon = false;
 
     [SerializeField] List<Collider> mColliders = new List<Collider>();
 
     [SerializeField] XRRayInteractor mXRRayInteractor = null;
     [SerializeField] XRDirectInteractor mXRDirectInteractor = null;
-    [SerializeField] InputActionReference pushButtonReference = null;
-    [SerializeField] InputActionReference primaryButtonReference = null;
+    [SerializeField] InputActionReference shotButtonReference = null;
+    [SerializeField] InputActionReference reloadButtonReference = null;
 
     [SerializeField] Weapon mWeapon = null;
     [SerializeField] GPE mGPEUsing = null;
@@ -45,13 +46,15 @@ public class Hand : MonoBehaviour
     [SerializeField] RigBuilder mRigBuilder = null;
     [SerializeField] List<Constraint> mConstraints = new List<Constraint>();
 
+    public HAND GetHandSide() { return mHand; }
+
     private void Awake()
     {
         InitializeRayInteractor();
         InitializeDirectInteractor();
 
-        pushButtonReference.action.performed += UseWeapon;
-        primaryButtonReference.action.performed += ReloadWeapon;
+        shotButtonReference.action.performed += UseWeapon;
+        reloadButtonReference.action.performed += ReloadWeapon;
 
         OnWeaponTaken += (Weapon _weapon) =>
         {
@@ -98,6 +101,12 @@ public class Hand : MonoBehaviour
     {
         if (!mColliders.Contains(other)) return;
         mColliders.Remove(other);
+    }
+
+    public void TrackingHand(bool _stop)
+    {
+        if (!mControllerHand) return;
+        mControllerHand.enableInputTracking = _stop;
     }
 
     void InitializeRayInteractor()
@@ -154,7 +163,8 @@ public class Hand : MonoBehaviour
             if (_collider.tag != "Holster") continue;
             _holsterFound = true;
             mWeapon.StopPhysics(true);
-            mWeapon.Constraint = _collider.transform;
+            Equipement _holster = _collider.GetComponent<Equipement>(); 
+            mWeapon.Constraint = _holster.GetHolsterPos();
         }
         if(!_holsterFound) mWeapon.StopPhysics(false);
         OnWeaponLost?.Invoke(mWeapon);
@@ -177,13 +187,13 @@ public class Hand : MonoBehaviour
     {
         if (!_gpe) return;
         mGPEUsing = _gpe;
-        _gpe.UseGPE(Player.Instance);
+        _gpe.UseGPE(Player.Instance, this);
     }
 
     void StopUsingGPE()
     {
         if (!mGPEUsing) return;
-        mGPEUsing.ExitGPE();
+        mGPEUsing.ExitGPE(Player.Instance, this);
         mGPEUsing = null;
     }
 }

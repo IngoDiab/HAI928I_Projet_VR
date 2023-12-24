@@ -333,11 +333,12 @@ Transform:
   m_GameObject: {fileID: 1394603618760830870}
   serializedVersion: 2
   m_LocalRotation: {x: 0.21390621, y: -0.78368825, z: 0.37623754, w: 0.44555837}
-  m_LocalPosition: {x: -0.17, y: -0.4, z: -0.02}
+  m_LocalPosition: {x: -0.17, y: 0.851, z: -0.02}
   m_LocalScale: {x: 0.15000004, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 12504126939017138}
+  - {fileID: 7717267390118080858}
   m_Father: {fileID: 6182340199538758605}
   m_LocalEulerAnglesHint: {x: 51.29, y: 599.24, z: 0}
 --- !u!136 &3995159591498050332
@@ -403,6 +404,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mCameraPlayerTransform: {fileID: 8267262666090556017}
+  mHolsterPos: {fileID: 7717267390118080858}
   mOffsetPosition: {x: -0.17, y: -0.4, z: 0.06}
 --- !u!1 &2250805703957782570
 GameObject:
@@ -531,6 +533,38 @@ MonoBehaviour:
   mRightHand: {fileID: 2600558939178496959}
   mLeftHand: {fileID: 8513714784664246409}
   mController: {fileID: 8818922162909364665}
+  mHeadPlayer: {fileID: 8267262666090556017}
+--- !u!1 &2467345045905851628
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7717267390118080858}
+  m_Layer: 0
+  m_Name: PosHolster
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7717267390118080858
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2467345045905851628}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.3, y: 0, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 590324388954998956}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2555857383276652879
 GameObject:
   m_ObjectHideFlags: 0
@@ -1494,12 +1528,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mHand: 2
+  mControllerHand: {fileID: 4883193739054135924}
   mHasWeapon: 0
   mColliders: []
   mXRRayInteractor: {fileID: 1519577572855113450}
   mXRDirectInteractor: {fileID: 4922573907695866043}
-  pushButtonReference: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  primaryButtonReference: {fileID: 0}
+  shotButtonReference: {fileID: -5982496924579745919, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  reloadButtonReference: {fileID: -8580917122815008625, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   mWeapon: {fileID: 0}
   mGPEUsing: {fileID: 0}
   mRigBuilder: {fileID: 6602751361102044209}
@@ -2456,12 +2491,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mHand: 1
+  mControllerHand: {fileID: 338978870890615484}
   mHasWeapon: 0
   mColliders: []
   mXRRayInteractor: {fileID: 5975901291606845647}
   mXRDirectInteractor: {fileID: 1657269371175237799}
-  pushButtonReference: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
-  primaryButtonReference: {fileID: 0}
+  shotButtonReference: {fileID: 83097790271614945, guid: c348712bda248c246b8c49b3db54643f, type: 3}
+  reloadButtonReference: {fileID: 5165306624109079980, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   mWeapon: {fileID: 0}
   mGPEUsing: {fileID: 0}
   mRigBuilder: {fileID: 4697056748259639854}

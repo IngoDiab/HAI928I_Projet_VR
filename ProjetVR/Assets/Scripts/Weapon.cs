@@ -80,7 +80,7 @@ public class Weapon : MonoBehaviour
     {
         OnWeaponShot += () =>
         {
-            mCanShoot = true;
+            mCanShoot = false;
             --mAmmo;
             RefreshUIAmmo();
 

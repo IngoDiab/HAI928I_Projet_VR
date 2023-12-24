@@ -12,6 +12,13 @@ public class Player : Singleton<Player>
     [SerializeField] Hand mRightHand = null;
     [SerializeField] Hand mLeftHand = null;
     [SerializeField] CharacterController mController = null;
+    [SerializeField] Transform mHeadPlayer = null;
+
+    public CharacterController GetCharacterController() { return mController; }
+    public float GetHalfSize() { return mController.height; }
+    public Vector3 GetHeadOffset() { return mHeadPlayer.position - transform.position; }
+    public Vector3 GetLeftHandOffset() { return mLeftHand.transform.position - transform.position; }
+    public Vector3 GetRightHandOffset() { return mRightHand.transform.position - transform.position; }
 
     private void Start()
     {

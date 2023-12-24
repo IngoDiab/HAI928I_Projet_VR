@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 205.33333, y: 0.6835856, z: 303.63922}
-  m_LocalScale: {x: 0.35000014, y: 0.35000017, z: 0.35000002}
+  m_LocalScale: {x: 0.35, y: 0.35, z: 0.35000002}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5152771942383103943}
@@ -251,8 +251,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbfa814650921234293780bac644fdb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mCanShoot: 1
   mAmmo: 9
   mMaxAmmo: 9
+  mBeingReload: 0
+  mMagazine: {fileID: 1020059764475540, guid: 0d09d1209c9c9274e9fae71ec6692500, type: 3}
+  mRealMagazine: {fileID: 1946539540547450}
+  mMagazineForceExpulsion: 25
   mAnimator: {fileID: 95526481279059032}
   mRigidbody: {fileID: 5445757400177269576}
   mIsFiring: 0
@@ -262,7 +267,6 @@ MonoBehaviour:
   mBulletCase: {fileID: 1961361031570070616, guid: 075b8714b6c066a48b7d37c7271e4c52, type: 3}
   mBulletCaseLocation: {fileID: 3961664219419289490}
   mBulletCaseForceExpulsion: 150
-  mVFXBulletHole: {fileID: 1570927096764274, guid: 643639841fb531e4ba8097fed4eb9ac7, type: 3}
   mHandlesLeftHand:
   - mFinger: 1
     mHandle: {fileID: 0}
