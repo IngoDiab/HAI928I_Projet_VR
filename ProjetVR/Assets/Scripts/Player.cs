@@ -10,6 +10,7 @@ public class Player : Singleton<Player>
 
     [SerializeField] TextMeshProUGUI mTargetDestroyedUI = null;
     [SerializeField] TextMeshProUGUI mTargetTotalUI = null;
+    [SerializeField] GameObject mMessage = null;
 
     [SerializeField] Hand mRightHand = null;
     [SerializeField] Hand mLeftHand = null;
@@ -35,5 +36,7 @@ public class Player : Singleton<Player>
         TargetManager _tManager = TargetManager.Instance;
         mTargetDestroyedUI.text = _tManager.GetNbTargetsDestroyed().ToString();
         mTargetTotalUI.text = "/" + _tManager.GetNbTargets().ToString();
+
+        if(_tManager.GetNbTargetsDestroyed() == _tManager.GetNbTargets()) mMessage.SetActive(true);
     }
 }

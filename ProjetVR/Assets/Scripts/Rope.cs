@@ -36,7 +36,7 @@ public class Rope : GPE
         MotionManager.Instance.EnableFreeRotation(false);
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         MovePlayerOnRope();
     }
