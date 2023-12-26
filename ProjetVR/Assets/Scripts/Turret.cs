@@ -22,8 +22,8 @@ public class Turret : MonoBehaviour
     [SerializeField] float mRotationSpeed = 10;
     [SerializeField] float mSpeedFire = 0;
 
-    void SetIsActive(bool _active) { mIsActive = _active; }
-    void ToggleActive() { mIsActive = !mIsActive; }
+    public void SetIsActive(bool _active) { mIsActive = _active; }
+    public void ToggleActive() { mIsActive = !mIsActive; }
 
     private void Start()
     {

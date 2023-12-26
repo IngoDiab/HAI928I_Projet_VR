@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Target : MonoBehaviour
 {
+    [SerializeField] Turret mRelatedTurret = null;
     [SerializeField] bool mHasBeenShot = false;
     [SerializeField] Rigidbody mRigidbody = null;
 
@@ -16,5 +17,7 @@ public class Target : MonoBehaviour
 
         mRigidbody.useGravity = true;
         mRigidbody.AddForceAtPosition(_direction, _posShot);
+
+        if (mRelatedTurret) mRelatedTurret.SetIsActive(false);
     }
 }
