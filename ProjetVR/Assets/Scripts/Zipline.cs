@@ -9,6 +9,8 @@ public class Zipline : GPE
     [SerializeField] Transform mDownRope = null;
     [SerializeField] float mMoveSpeed = 10;
 
+    [SerializeField] bool mAuto = true;
+
     float mInterpolation = 0;
 
     public void CalculateInterpolationOnPlayerPosition()
@@ -40,9 +42,7 @@ public class Zipline : GPE
     {
         if (!mPlayerAttached) return;
 
-        RaycastHit _hit;
-        bool _hasHit = Physics.Raycast(mPlayerAttached.transform.position, -Vector3.up, out _hit, mPlayerAttached.GetHalfSize());
-        if (true)
+        if (mAuto)
         {
             mInterpolation += mMoveSpeed * Time.deltaTime;
             mInterpolation = Mathf.Clamp01(mInterpolation);
