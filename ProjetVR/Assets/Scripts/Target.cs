@@ -18,6 +18,6 @@ public class Target : MonoBehaviour
         mRigidbody.useGravity = true;
         mRigidbody.AddForceAtPosition(_direction, _posShot);
 
-        if (mRelatedTurret) mRelatedTurret.SetIsActive(false);
+        if (mRelatedTurret) mRelatedTurret.SetIsDestroyed(true);
     }
 }

@@ -8,6 +8,7 @@ public class Turret : MonoBehaviour
 {
     [SerializeField] bool mIsActive = true;
     [SerializeField] bool mTurnOn = true;
+    [SerializeField] bool mDestroyed = false;
     [SerializeField] float mDistanceDetection = 10;
 
     [SerializeField] Transform mTurretHead = null;
@@ -22,7 +23,7 @@ public class Turret : MonoBehaviour
     [SerializeField] float mRotationSpeed = 10;
     [SerializeField] float mSpeedFire = 0;
 
-    public void SetIsActive(bool _active) { mIsActive = _active; }
+    public void SetIsDestroyed(bool _destroyed) { mDestroyed = _destroyed; }
     public void ToggleActive() { mIsActive = !mIsActive; }
 
     private void Start()
@@ -33,6 +34,7 @@ public class Turret : MonoBehaviour
 
     private void Update()
     {
+        if (mDestroyed) return;
         if (!mIsActive && (Player.Instance.transform.position - transform.position).magnitude < mDistanceDetection) mTurnOn = true;
         CheckStateTuret();
     }
@@ -51,7 +53,7 @@ public class Turret : MonoBehaviour
 
     IEnumerator Reload()
     {
-        if (mIsReloading || !mIsActive) yield break;
+        if (mDestroyed || mIsReloading || !mIsActive) yield break;
         mIsReloading = true;
         yield return new WaitForSeconds(mReloadTime);
         mAmmo = mMaxAmmo;
@@ -61,7 +63,7 @@ public class Turret : MonoBehaviour
 
     IEnumerator Shoot()
     {
-        if (mIsReloading || !mBarrel || !mIsActive) yield break;
+        if (mDestroyed || mIsReloading || !mBarrel || !mIsActive) yield break;
 
         --mAmmo;
         SoundManager.Instance.PlaySound(SOUND_NAME.SHOT_1911, mBarrel.position);
@@ -93,7 +95,7 @@ public class Turret : MonoBehaviour
 
     void FollowPlayer()
     {
-        if (!mIsActive) return;
+        if (mDestroyed || !mIsActive) return;
         Transform _target = Player.Instance.GetHead();
         Vector3 _direction = _target.position - mTurretHead.position;
         Quaternion _quatTarget = Quaternion.LookRotation(_direction);
